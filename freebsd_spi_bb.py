@@ -1,12 +1,12 @@
 import time
 
-import freebsd-gpio
+from freebsd_gpio import set_gpio_direction, set_gpio_value
 
 # Variables
-SS
-SCLK =  # CI (Blue)
-MOSI =  # DI (Green)
-MISO
+# SS
+SCLK = 2 # CI (Blue)
+MOSI = 3 # DI (Green)
+# MISO
 
 def delay():
     time.sleep(0.01)
