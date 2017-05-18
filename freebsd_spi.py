@@ -1,6 +1,11 @@
 import os
 import time
 
+from fbsd_gpio import GpioController
+
+# Controller
+gpioc = GpioController(0)
+
 # Variables
 SCLK = 2 # CI (Blue)
 MOSI = 3 # DI (Green)
@@ -9,12 +14,13 @@ DELAY = 0.01 # Delay time (s)
 
 # Gpio value is one of [0, 1, "0", "1"]
 def gpio_set_value(pin, value):
-    os.system("gpioctl " + str(pin) + " " + str(value))
+    gpioc.pin_set(int(pin), int(value))
 
 
 # Direction is one of ["IN", "OUT"]
 def gpio_set_direction(pin, direction):
-    os.system("gpioctl -c " + str(pin) + " " + direction)
+    if direction == "OUT":
+        gpioc.pin_output(int(pin))
 
 
 def delay():
