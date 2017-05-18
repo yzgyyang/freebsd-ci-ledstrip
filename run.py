@@ -15,11 +15,16 @@ if __name__ == "__main__":
         data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())["jobs"]
         led_send_start()
         for job in status:
+            isfound = False
             for item in data:
                 if item["name"] == job["name"]:
                     led_send(item["color"])
+                    isfound = True
                     print job["name"] + " status: " + item["color"]
                     break
+            if isfound:
+                isfound = False
+            else:
                 led_send("else")
         led_send_end()
         time.sleep(2)
