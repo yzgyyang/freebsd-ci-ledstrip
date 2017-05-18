@@ -14,11 +14,12 @@ def gpio_set_value(pin, value):
 
 # Direction is one of ["IN", "OUT"]
 def gpio_set_direction(pin, direction):
-    os.system("gpioctl -c" + str(pin) + " " + direction)
+    os.system("gpioctl -c " + str(pin) + " " + direction)
 
 
 def delay():
-    time.sleep(DELAY)
+    # time.sleep(DELAY)
+    pass
 
 
 def spi_init():
