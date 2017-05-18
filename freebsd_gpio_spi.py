@@ -18,7 +18,7 @@ def gpio_set_direction(pin, direction):
 
 
 def delay():
-    time.sleep(0.01)
+    time.sleep(DELAY)
 
 
 def spi_init():
@@ -29,16 +29,15 @@ def spi_init():
     
     
 def spi_write_byte(b):
+    print "Writing: " + format(b, "08b")
     for i in xrange(8):
         gpio_set_value(SCLK, 0)
         gpio_set_value(MOSI, format(b, "08b")[i])
         delay()
         gpio_set_value(SCLK, 1)
-        delay()
 
 
 def spi_write(buf):
     for i in buf:
         spi_write_byte(i)
-    delay()
 
