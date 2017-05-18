@@ -18,6 +18,7 @@ if __name__ == "__main__":
             for item in data:
                 if item["name"] == job["name"]:
                     led_send(item["color"])
+                    print job["name"] + " status: " + item["color"]
                     break
                 led_send("else")
         led_send_end()

@@ -1,4 +1,4 @@
-from freebsd_gpio_spi import spi_init, spi_write
+from freebsd_spi import spi_init, spi_write
 
 # Variables
 BRT = 224 + 16 # Brightness, 0~31 decimal
