@@ -12,7 +12,7 @@ JENKINS_URL = "https://ci.freebsd.org/api/python"
 
 
 def timestamp():
-    return "[" + str(datetime.datetime.now) + "] "
+    return "[" + str(datetime.datetime.now()) + "] "
 
 
 class Led_controller(threading.Thread):
@@ -22,6 +22,8 @@ class Led_controller(threading.Thread):
             blink_flag = not blink_flag
             led_send_start()
             led_send_all(status, blink_flag)
+            for _ in xrange(30):
+                led_send("dne")
             led_send_end()
             time.sleep(0.5)
 
