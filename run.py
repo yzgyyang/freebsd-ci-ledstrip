@@ -11,6 +11,10 @@ from config import status
 JENKINS_URL = "https://ci.freebsd.org/api/python"
 
 
+def timestamp():
+    return "[" + str(datetime.datetime.now) + "] "
+
+
 class Led_controller(threading.Thread):
     def run(self):
         blink_flag = False
@@ -20,6 +24,7 @@ class Led_controller(threading.Thread):
             led_send_all(status, blink_flag)
             led_send_end()
             time.sleep(0.5)
+
 
 if __name__ == "__main__":
     spi_init()
@@ -34,13 +39,13 @@ if __name__ == "__main__":
                 if item["name"] == job["name"]:
                     isfound = True
                     if job["status"] != item["color"]:
-                        print datetime.datetime.now() + job["name"] + " changed to status: " + item["color"]
+                        print timestamp() + job["name"] + " changed to status: " + item["color"]
                         job["status"] = item["color"]
                     break
             if job["status"] != "dne" and not isfound:
-                print datetime.datetime.now() + job["name"] + " does not exist"
+                print timestamp() + job["name"] + " does not exist"
                 job["status"] = "dne"
-        print datetime.datetime.now() + "Status updated successfully."
+        print timestamp() + "Status updated successfully."
         time.sleep(20)
 
 
