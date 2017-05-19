@@ -3,7 +3,7 @@ import ast
 import urllib
 
 from freebsd_spi import spi_init
-from freebsd_apa102 import led_send_start, led_send_end, led_send
+from freebsd_apa102 import led_send_start, led_send_end, led_send, led_send_all
 from config import status
 
 JENKINS_URL = "https://ci.freebsd.org/api/python"
