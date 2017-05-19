@@ -36,7 +36,6 @@ def spi_init():
     
     
 def spi_write_byte(b):
-    print "Writing: " + format(b, "08b")
     for i in xrange(8):
         gpio_set_value(SCLK, 0)
         gpio_set_value(MOSI, format(b, "08b")[i])

@@ -29,6 +29,7 @@ if __name__ == "__main__":
                 job["status"] = "dne"
         blink_flag = not blink_flag
         led_send_start()
+        led_send_all(status, blink_flag)
         led_send_end()
         time.sleep(1)
 
