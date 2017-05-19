@@ -19,8 +19,8 @@ if __name__ == "__main__":
             isfound = False
             for item in data:
                 if item["name"] == job["name"]:
+                    isfound = True
                     if job["status"] != item["color"]:
-                        isfound = True
                         print job["name"] + " changed to status: " + item["color"]
                         job["status"] = item["color"]
                     break
