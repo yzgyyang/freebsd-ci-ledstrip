@@ -10,7 +10,7 @@ BLUE_LED_FRAME = [BRT, 1, 0, 0]
 GREEN_LED_FRAME = [BRT, 0, 1, 0]
 RED_LED_FRAME = [BRT, 0, 0, 1]
 YELLOW_LED_FRAME = [BRT, 0, 1, 1]
-
+OFF_LED_FRAME = [224, 0, 0, 0]
 
 def led_send_start():
     spi_write(START_FRAME)
@@ -25,7 +25,23 @@ def led_send(status):
         spi_write(GREEN_LED_FRAME)
     elif status in ["red", "red_anime"]:
         spi_write(RED_LED_FRAME)
+    elif status in ["dne"]:
+        spi_write(OFF_LED_FRAME)
     else:
         spi_write(YELLOW_LED_FRAME)
 
 
+def led_send_all(jobs, blink_flag):
+    for job in jobs:
+        if job["status"] == "blue_anime":
+            if blink_flag:
+                led_send("blue")
+            else:
+                led_send("dne")
+        elif job["status"] == "red_anime":
+            if blink_flag:
+                led_send("red")
+            else:
+                led_send("dne")
+        else:
+            led_send(job["status"])
