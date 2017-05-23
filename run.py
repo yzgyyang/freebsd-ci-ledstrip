@@ -29,6 +29,7 @@ class Led_controller(threading.Thread):
 
 if __name__ == "__main__":
     spi_init()
+    status[-2]["status"] = "blue"
     led_controller = Led_controller()
     led_controller.start()
 
@@ -48,6 +49,7 @@ if __name__ == "__main__":
                     print timestamp() + job["name"] + " does not exist"
                     job["status"] = "dne"
             print timestamp() + "Status updated successfully."
+            status[-1]["status"] = "blue"
         except:
             status[-1]["status"] = "red_anime"
         status[-1]["status"] = "blue"
