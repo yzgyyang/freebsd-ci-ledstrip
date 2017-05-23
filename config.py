@@ -1,6 +1,6 @@
 status = [
         {"name": "FreeBSD-head-amd64-build", "status": "undefined"},
-        {"name": "FreeBSD-head-arm-build", "status": "undefined"},
+        {"name": "FreeBSD-head-aarch64-build", "status": "undefined"},
         {"name": "FreeBSD-head-armv6-build", "status": "undefined"},
         {"name": "FreeBSD-head-i386-build", "status": "undefined"},
         {"name": "FreeBSD-head-mips-build", "status": "undefined"},
@@ -11,7 +11,7 @@ status = [
         {"name": "FreeBSD-head-riscv64-build", "status": "undefined"},
         
         {"name": "FreeBSD-stable-11-amd64-build", "status": "undefined"},
-        {"name": "FreeBSD-stable-11-arm-build", "status": "undefined"},
+        {"name": "FreeBSD-stable-11-aarch64-build", "status": "undefined"},
         {"name": "FreeBSD-stable-11-armv6-build", "status": "undefined"},
         {"name": "FreeBSD-stable-11-i386-build", "status": "undefined"},
         {"name": "FreeBSD-stable-11-mips-build", "status": "undefined"},
@@ -22,7 +22,7 @@ status = [
         {"name": "FreeBSD-stable-11-riscv64-build", "status": "undefined"},
 
         {"name": "FreeBSD-stable-10-amd64-build", "status": "undefined"},
-        {"name": "FreeBSD-stable-10-arm-build", "status": "undefined"},
+        {"name": "FreeBSD-stable-10-aarch64-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-armv6-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-i386-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-mips-build", "status": "undefined"},
