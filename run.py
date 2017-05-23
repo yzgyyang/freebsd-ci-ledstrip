@@ -11,8 +11,6 @@ from config import status
 JENKINS_URL = "https://ci.freebsd.org/api/python"
 
 
-last_update_flag
-
 def timestamp():
     return "[" + str(datetime.datetime.now()) + "] "
 
