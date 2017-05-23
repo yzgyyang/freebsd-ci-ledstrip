@@ -30,5 +30,8 @@ status = [
         {"name": "FreeBSD-stable-10-i386-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-armv6-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-aarch64-build", "status": "undefined"},
-        {"name": "FreeBSD-stable-10-amd64-build", "status": "undefined"}
+        {"name": "FreeBSD-stable-10-amd64-build", "status": "undefined"},
+
+        {"name": "System-up", "status": "undefined"},
+        {"name": "Last-update", "status": "undefined"}
         ]

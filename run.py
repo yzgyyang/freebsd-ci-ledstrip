@@ -11,6 +11,8 @@ from config import status
 JENKINS_URL = "https://ci.freebsd.org/api/python"
 
 
+last_update_flag
+
 def timestamp():
     return "[" + str(datetime.datetime.now()) + "] "
 
@@ -32,20 +34,24 @@ if __name__ == "__main__":
     led_controller.start()
 
     while True:
-        data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())["jobs"]
-        for job in status:
-            isfound = False
-            for item in data:
-                if item["name"] == job["name"]:
-                    isfound = True
-                    if job["status"] != item["color"]:
-                        print timestamp() + job["name"] + " changed to status: " + item["color"]
-                        job["status"] = item["color"]
-                    break
-            if job["status"] != "dne" and not isfound:
-                print timestamp() + job["name"] + " does not exist"
-                job["status"] = "dne"
-        print timestamp() + "Status updated successfully."
+        try:
+            data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())["jobs"]
+            for job in status[:-2]:
+                isfound = False
+                for item in data:
+                    if item["name"] == job["name"]:
+                        isfound = True
+                        if job["status"] != item["color"]:
+                            print timestamp() + job["name"] + " changed to status: " + item["color"]
+                            job["status"] = item["color"]
+                        break
+                if job["status"] != "dne" and not isfound:
+                    print timestamp() + job["name"] + " does not exist"
+                    job["status"] = "dne"
+            print timestamp() + "Status updated successfully."
+        except:
+            status[-1]["status"] = "red_anime"
+        status[-1]["status"] = "blue"
         time.sleep(20)
 
 
