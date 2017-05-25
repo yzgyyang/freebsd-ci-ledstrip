@@ -8,7 +8,7 @@ from freebsd_spi import spi_init
 from freebsd_apa102 import led_send_start, led_send_end, led_send, led_send_all
 from config import status
 
-JENKINS_URL = "https://ci.freebsd.org/api/python"
+JENKINS_URL = "https://ci.freebsd.org/api/python?tree=jobs[name,color]"
 
 
 def timestamp():
@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     while True:
         try:
-            data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())["jobs"]
+            data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())
             for job in status[:-2]:
                 isfound = False
                 for item in data:
