@@ -20,8 +20,8 @@ def delay():
 def spi_init():
     gpioc.pin_output(SCLK)
     gpioc.pin_output(MOSI)
-    gpio_set_value(SCLK, 0)
-    gpio_set_value(MOSI, 0)
+    gpioc.pin_set(SCLK, 0)
+    gpioc.pin_set(MOSI, 0)
     
     
 def spi_write_byte(b):
