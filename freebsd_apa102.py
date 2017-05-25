@@ -33,14 +33,9 @@ def led_send(status):
 
 def led_send_all(jobs, blink_flag):
     for job in jobs:
-        if job["status"] == "blue_anime":
+        if "anime" in job["status"]:
             if blink_flag:
-                led_send("blue")
-            else:
-                led_send("dne")
-        elif job["status"] == "red_anime":
-            if blink_flag:
-                led_send("red")
+                led_send(job["status"])
             else:
                 led_send("dne")
         else:
