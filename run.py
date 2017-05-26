@@ -5,10 +5,11 @@ import urllib
 import threading
 
 from freebsd_spi import spi_init
-from freebsd_apa102 import led_send_start, led_send_end, led_send, led_send_all
+from freebsd_apa102 import led_send_all
 from config import status
 
 JENKINS_URL = "https://ci.freebsd.org/api/python?tree=jobs[name,color]"
+BLINK_INTERVAL = 0.5
 
 
 def timestamp():
@@ -20,18 +21,17 @@ class Led_controller(threading.Thread):
         blink_flag = False
         while True:
             blink_flag = not blink_flag
-            led_send_start()
             led_send_all(status, blink_flag)
-            led_send("dne")
-            led_send_end()
-            time.sleep(0.5)
+            time.sleep(BLINK_INTERVAL)
 
 
 if __name__ == "__main__":
     spi_init()
-    status[-2]["status"] = "blue"
     led_controller = Led_controller()
     led_controller.start()
+
+    status[-3]["status"] = "blue"
+    status[-1]["status"] = "dne"
 
     while True:
         try:
@@ -49,10 +49,7 @@ if __name__ == "__main__":
                     print timestamp() + job["name"] + " does not exist"
                     job["status"] = "dne"
             print timestamp() + "Status updated successfully."
-            status[-1]["status"] = "blue"
+            status[-2]["status"] = "blue"
         except:
-            status[-1]["status"] = "red_anime"
-        status[-1]["status"] = "blue"
+            status[-2]["status"] = "red_anime"
         time.sleep(20)
-
-
