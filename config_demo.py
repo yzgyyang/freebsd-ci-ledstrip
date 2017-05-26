@@ -19,9 +19,9 @@ status = [
         {"name": "FreeBSD-stable-11-powerpc-build", "status": "red"},
         {"name": "FreeBSD-stable-11-powerpc64-build", "status": "red_anime"},
         {"name": "FreeBSD-stable-11-sparc64-build", "status": "blue"},
-        {"name": "FreeBSD-stable-11-riscv64-build", "status": "undefined"},
+        {"name": "FreeBSD-stable-11-riscv64-build", "status": "blue"},
 
-        {"name": "FreeBSD-stable-10-riscv64-build", "status": "blue"},
+        {"name": "FreeBSD-stable-10-riscv64-build", "status": "undefined"},
         {"name": "FreeBSD-stable-10-sparc64-build", "status": "blue"},
         {"name": "FreeBSD-stable-10-powerpc64-build", "status": "blue"},
         {"name": "FreeBSD-stable-10-powerpc-build", "status": "blue"},
