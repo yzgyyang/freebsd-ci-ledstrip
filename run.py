@@ -36,7 +36,7 @@ if __name__ == "__main__":
     while True:
         try:
             data = ast.literal_eval(urllib.urlopen(JENKINS_URL).read())["jobs"]
-            for job in status[:-2]:
+            for job in status[:-3]:
                 isfound = False
                 for item in data:
                     if item["name"] == job["name"]:
