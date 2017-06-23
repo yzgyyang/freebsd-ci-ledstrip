@@ -49,7 +49,7 @@ if __name__ == "__main__":
                     print timestamp() + job["name"] + " does not exist"
                     job["status"] = "dne"
             print timestamp() + "Status updated successfully."
-            status[-2]["status"] = "blue"
+            status[-2]["status"] = "blue_anime"
         except:
             status[-2]["status"] = "red_anime"
         time.sleep(20)
