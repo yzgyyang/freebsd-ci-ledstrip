@@ -1,0 +1,24 @@
+[all]
+max_line_length = 80
+use_spaces = True
+
+[all.python]
+files = **.py
+language = Python
+bears = SpaceConsistencyBear
+
+[all.autopep8]
+files = **.py
+language = Python
+bears = PEP8Bear, PycodestyleBear
+pycodestyle_ignore = E722
+default_actions = PEP8Bear: ApplyPatchAction
+
+[all.text]
+bears = SpaceConsistencyBear
+files = README.md
+
+[all.TODOS]
+bears = KeywordBear
+language = python 3
+keywords = \#TODO, \# TODO, \#FIXME, \# FIXME
