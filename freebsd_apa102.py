@@ -1,7 +1,7 @@
 from freebsd_spi import spi_init, spi_write
 
 # Variables
-BRT = 224 + 16 # Brightness, 0~31 decimal
+BRT = 224 + 16  # Brightness, 0~31 decimal
 
 # Predefined data frames
 START_FRAME = [0, 0, 0, 0]
@@ -11,6 +11,7 @@ GREEN_LED_FRAME = [BRT, 0, 1, 0]
 RED_LED_FRAME = [BRT, 0, 0, 1]
 YELLOW_LED_FRAME = [BRT, 0, 1, 1]
 OFF_LED_FRAME = [224, 0, 0, 0]
+
 
 def led_send_start():
     spi_write(START_FRAME)

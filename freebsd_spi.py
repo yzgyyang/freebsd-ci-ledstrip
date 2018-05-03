@@ -7,8 +7,8 @@ from fbsd_gpio import GpioController
 gpioc = GpioController(0)
 
 # Variables
-SCLK = 2 # CI (Blue)
-MOSI = 3 # DI (Green)
+SCLK = 2  # CI (Blue)
+MOSI = 3  # DI (Green)
 
 
 def spi_init():

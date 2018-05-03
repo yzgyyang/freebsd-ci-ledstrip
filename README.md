@@ -6,7 +6,7 @@ What started as a side project during my first few weeks of interning at The Fre
 
 ## Publications
 
-A detailed guide/article is posted at the [FreeBSD Foundation Blog](https://www.freebsdfoundation.org/news-and-events/blog/blog-post/building-a-physical-freebsd-build-status-dashboard/).  
+A detailed guide/article is posted at the [FreeBSD Foundation Blog](https://www.freebsdfoundation.org/news-and-events/blog/blog-post/building-a-physical-freebsd-build-status-dashboard/).
 The draft of the article is posted [here](https://github.com/yzgyyang/stuff/blob/master/BeagleBone_FreeBSD_SPI_Setup.md). Pull Requests are very welcome.
 
 ## Requirements

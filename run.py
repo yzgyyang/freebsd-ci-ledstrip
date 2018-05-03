@@ -42,7 +42,8 @@ if __name__ == "__main__":
                     if item["name"] == job["name"]:
                         isfound = True
                         if job["status"] != item["color"]:
-                            print timestamp() + job["name"] + " changed to status: " + item["color"]
+                            print timestamp() + job["name"] +
+                            " changed to status: " + item["color"]
                             job["status"] = item["color"]
                         break
                 if job["status"] != "dne" and not isfound:
