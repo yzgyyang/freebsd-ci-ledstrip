@@ -5,6 +5,7 @@ python:
 
 before_install:
   - pip install coala coala-bears
+  - mv requirements.txt requirements.txt.orig
 
 script:
   - coala --non-interactive
